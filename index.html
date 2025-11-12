@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A Taste of Lyon — Tooyoo × Office de Tourisme (Gastronomie)</title>
+  <meta name="description" content="A Taste of Lyon: immersion gourmande dans la capitale de la gastronomie. Parcours, bouchons, chefs, marchés, carte et interview. Par Tooyoo, en lien avec l’Office de Tourisme de Lyon (branche gastronomie)." />
+  <style>
+    :root{--bg:#0e0f10;--surface:#15171a;--text:#f6f3ee;--muted:#bdb7ae;--brand:#7b0f1d;--brand-2:#b21d2b;--accent:#d4af37;--line:#272a2f;--focus:#ffe08a}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font:16px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:var(--text);background:radial-gradient(1200px 800px at 20% -10%,#1b1d22 0%,var(--bg) 60%);opacity:0;animation:fadeIn .4s ease forwards}
+    @keyframes fadeIn{to{opacity:1}}
+    .page-leave{opacity:0 !important;transition:opacity .25s ease}
+    img{max-width:100%;height:auto;display:block}
+    .container{width:min(1150px,92%);margin-inline:auto}
+    section{padding:56px 0;border-top:1px solid var(--line)}
+    .header{position:sticky;top:0;z-index:40;backdrop-filter:saturate(1.1) blur(8px);background:color-mix(in oklab,var(--bg) 60%,transparent);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:.7rem}
+    .brand-logo{inline-size:32px;block-size:32px;border-radius:10px;border:1px solid var(--line);background:conic-gradient(from 120deg,var(--accent),#0000 60deg),linear-gradient(135deg,#272a2f,#16181c)}
+    .brand h1{font-size:1rem;letter-spacing:.4px;margin:0}
+    nav ul{display:flex;gap:1rem;margin:0;padding:0;list-style:none}
+    nav a{color:var(--text);text-decoration:none;padding:.45rem .7rem;border-radius:10px}
+    nav a:hover{background:var(--surface)}
+    .nav-cta{background:var(--accent);color:#1b1400;padding:.55rem .9rem;border-radius:12px;font-weight:700}
+    .menu-btn{display:none;background:transparent;border:1px solid var(--line);color:var(--text);padding:.45rem .6rem;border-radius:10px}
+    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;padding:64px 0 40px}
+    .kicker{display:inline-flex;align-items:center;gap:.5rem;padding:.25rem .6rem;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:.9rem}
+    .title{font-size:clamp(2rem,4vw + .5rem,3.2rem);line-height:1.12;margin:.6rem 0}
+    .lead{color:var(--muted);margin:0 0 1rem}
+    .cta-row{display:flex;gap:.8rem;flex-wrap:wrap}
+    .btn{background:var(--brand);color:#fff;border:0;padding:.8rem 1.1rem;border-radius:14px;font-weight:700;cursor:pointer}
+    .btn:hover{background:var(--brand-2)}
+    .btn.secondary{background:transparent;border:1px solid var(--line);color:var(--text)}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
+    .grid{display:grid;gap:18px}
+    .cols-2{grid-template-columns:repeat(2,1fr)}
+    .cols-3{grid-template-columns:repeat(3,1fr)}
+    .badges{display:flex;gap:10px;flex-wrap:wrap}
+    .badge{border:1px solid var(--line);border-radius:999px;padding:.28rem .65rem;color:var(--muted);font-size:.9rem}
+    .list{display:grid;gap:14px}
+    .item{display:flex;gap:12px;align-items:center}
+    .thumb{inline-size:64px;block-size:64px;border-radius:10px;border:1px solid var(--line);object-fit:cover}
+    .footer{padding:38px 0;color:var(--muted)}
+    .footer a{color:var(--muted)}
+    .mt-0{margin-top:0}.mt-1{margin-top:6px}.mt-2{margin-top:10px}.mt-3{margin-top:16px}
+    .text-muted{color:var(--muted)}
+    .partner{display:flex;gap:.6rem;align-items:center;border:1px dashed var(--line);border-radius:12px;padding:.5rem .7rem;color:var(--muted)}
+    .partner img{inline-size:20px;block-size:20px;border-radius:4px}
+    @media (max-width:980px){.hero{grid-template-columns:1fr}.cols-2,.cols-3{grid-template-columns:1fr}nav ul{display:none}.menu-btn{display:inline-flex}.nav.open ul{display:flex;flex-direction:column;position:absolute;right:4%;top:56px;background:var(--surface);padding:10px;border:1px solid var(--line);border-radius:12px;width:min(280px,92vw)}}
+    a{color:var(--accent)}a:hover{text-decoration:underline}
+    :focus{outline:2px solid var(--focus);outline-offset:2px}
+    @media print{.header,.footer{display:none}section{padding:0}}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true"></div>
+        <h1>A Taste of Lyon</h1>
+        <span class="partner" title="Partenariat — Office du Tourisme de Lyon (Gastronomie)">
+          <img src="assets/lyon-tourisme.png" alt="Logo Office du Tourisme de Lyon"/> Gastronomie — partenaire
+        </span>
+      </div>
+      <nav aria-label="Navigation principale">
+        <button class="menu-btn" aria-label="Ouvrir le menu">☰</button>
+        <ul>
+          <li><a href="pages/experiences.html">Expériences</a></li>
+          <li><a href="pages/bouchons.html">Bouchons</a></li>
+          <li><a href="pages/chefs.html">Chefs</a></li>
+          <li><a href="pages/map.html">Carte</a></li>
+          <li><a href="pages/interview.html">Interview</a></li>
+          <li><a href="pages/plan-your-trip.html" class="nav-cta">Planifier</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero" id="home">
+      <div>
+        <span class="kicker">Tooyoo · Stratégie — « A Taste of Lyon »</span>
+        <h2 class="title">Tradition & modernité : goûtez Lyon, capitale de la gastronomie</h2>
+        <p class="lead">Parcourez les bouchons, rencontrez les chefs, flânez aux Halles, suivez nos itinéraires et plongez dans l’art des sauces, des quenelles et des marchés lyonnais.</p>
+        <div class="cta-row">
+          <a class="btn" href="pages/experiences.html">Découvrir les expériences</a>
+          <a class="btn secondary" href="pages/bouchons.html">L'esprit bouchon</a>
+        </div>
+        <div class="badges mt-2">
+          <span class="badge">Bouchons</span>
+          <span class="badge">Halles & Marchés</span>
+          <span class="badge">Chefs & Étoiles</span>
+          <span class="badge">Ateliers & Dégustations</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="assets/hero.jpg" alt="Assiette gastronomique lyonnaise (placeholder)" />
+      </div>
+    </section>
+
+    <section>
+      <div class="container grid cols-3">
+        <article class="card">
+          <h3>Parcours gourmands</h3>
+          <p class="text-muted">Trois itinéraires piétons : « Bouchons & traboules », « Halles & terroirs », « Saône rive gourmande ».</p>
+          <a href="pages/experiences.html">Voir les parcours →</a>
+        </article>
+        <article class="card">
+          <h3>Les chefs</h3>
+          <p class="text-muted">De la tradition des « mères » à la création contemporaine. Portraits, adresses, spécialités.</p>
+          <a href="pages/chefs.html">Rencontrer les chefs →</a>
+        </article>
+        <article class="card">
+          <h3>Carte interactive</h3>
+          <p class="text-muted">Repérez bouchons, marchés, ateliers et points de vue — tout pour une journée gourmande.</p>
+          <a href="pages/map.html">Explorer la carte →</a>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="container cols-2 grid">
+        <div class="card">
+          <h2>En lien avec l’Office de Tourisme — Branche Gastronomie</h2>
+          <p class="text-muted">Ce site est conçu par l’agence <strong>Tooyoo</strong> dans le cadre de la stratégie « A Taste of Lyon », en collaboration avec l’Office de Tourisme de Lyon (pôle gastronomie). Les informations pratiques renvoient vers leurs canaux officiels.</p>
+          <ul class="list">
+            <li class="item"><img class="thumb" src="assets/thumb-market.jpg" alt="Marché"><div><strong>Halles & Marchés</strong><div class="text-muted">Conseils horaires, saisonnalité, spécialités locales.</div></div></li>
+            <li class="item"><img class="thumb" src="assets/thumb-bouchon.jpg" alt="Bouchon"><div><strong>Code du bouchon</strong><div class="text-muted">Convivialité, plats canailles, vins, addition partagée.</div></div></li>
+            <li class="item"><img class="thumb" src="assets/thumb-chef.jpg" alt="Chef"><div><strong>Chefs & maisons</strong><div class="text-muted">Héritage, techniques, modernité.</div></div></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Interview — La Mère Brazier</h2>
+          <p class="text-muted">L’institution fondée par Eugénie Brazier, revisitée par le MOF <em>Mathieu Viannay</em>. Découvrez notre interview courte (1–2 min) sur l’héritage, l’inspiration et l’avenir.</p>
+          <a class="btn mt-2" href="pages/interview.html">Voir l’interview →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container grid cols-3">
+      <div>
+        <strong>Tooyoo · A Taste of Lyon</strong>
+        <p class="text-muted mt-1">Stratégie de promotion de Lyon par sa gastronomie, en lien avec l’Office de Tourisme (branche gastronomie).</p>
+      </div>
+      <div>
+        <strong>Pages</strong>
+        <ul class="mt-1">
+          <li><a href="pages/experiences.html">Expériences</a></li>
+          <li><a href="pages/bouchons.html">Bouchons</a></li>
+          <li><a href="pages/chefs.html">Chefs</a></li>
+          <li><a href="pages/map.html">Carte</a></li>
+          <li><a href="pages/plan-your-trip.html">Planifier</a></li>
+        </ul>
+      </div>
+      <div>
+        <strong>Contact</strong>
+        <p class="mt-1 text-muted">Agence Tooyoo — hello@tooyoo.agency (placeholder)</p>
+        <a href="pages/about.html">À propos</a> · <a href="pages/contact.html">Contact</a> · <a href="pages/credits.html">Crédits</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header=document.querySelector('.header');
+    const btn=document.querySelector('.menu-btn');
+    if(btn){btn.addEventListener('click',()=>{header.classList.toggle('open')})}
+    // Page transition (only for same-site links)
+    const isInternal=(url)=>url && !url.startsWith('http') && !url.startsWith('mailto:') && !url.startsWith('#');
+    document.querySelectorAll('a[href]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const href=a.getAttribute('href');
+        if(isInternal(href)){
+          e.preventDefault();
+          document.body.classList.add('page-leave');
+          setTimeout(()=>{window.location.href=href},250);
+        }
+      })
+    });
+  </script>
+</body>
+</html>
