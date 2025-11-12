@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Tooyoo</title>
+  <meta name="description" content="Contactez l’agence Tooyoo à propos du projet ‘A Taste of Lyon’." />
+  <style>
+    :root{--bg:#0e0f10;--surface:#15171a;--text:#f6f3ee;--muted:#bdb7ae;--brand:#7b0f1d;--brand-2:#b21d2b;--accent:#d4af37;--line:#272a2f;--focus:#ffe08a}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;font:16px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--text);background:radial-gradient(1200px 800px at 20% -10%,#1b1d22 0%,var(--bg) 60%);opacity:0;animation:fadeIn .4s ease forwards}
+    @keyframes fadeIn{to{opacity:1}}.page-leave{opacity:0 !important;transition:opacity .25s ease}
+    .container{width:min(1150px,92%);margin-inline:auto}
+    section{padding:56px 0;border-top:1px solid var(--line)}
+    .header{position:sticky;top:0;z-index:40;backdrop-filter:saturate(1.1) blur(8px);background:color-mix(in oklab,var(--bg) 60%,transparent);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:.7rem}.brand-logo{inline-size:32px;block-size:32px;border-radius:10px;border:1px solid var(--line);background:conic-gradient(from 120deg,var(--accent),#0000 60deg),linear-gradient(135deg,#272a2f,#16181c)}
+    .brand h1{font-size:1rem;margin:0}
+    nav ul{display:flex;gap:1rem;margin:0;padding:0;list-style:none}
+    nav a{color:var(--text);text-decoration:none;padding:.45rem .7rem;border-radius:10px}
+    nav a:hover{background:var(--surface)}
+    .grid{display:grid;gap:18px}.cols-2{grid-template-columns:repeat(2,1fr)}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
+    .breadcrumbs{font-size:.92rem;color:var(--muted);margin:12px 0}.breadcrumbs a{color:var(--muted)}
+    .input,.textarea{width:100%;padding:.8rem 1rem;border-radius:12px;border:1px solid var(--line);background:#101215;color:var(--text)}
+    .textarea{min-height:140px;resize:vertical}
+    .label{font-weight:600}
+    .btn{background:var(--brand);color:#fff;border:0;padding:.7rem 1rem;border-radius:12px;font-weight:700;cursor:pointer}
+    .btn:hover{background:var(--brand-2)}
+    .text-muted{color:var(--muted)}.mt-0{margin-top:0}
+    @media (max-width:980px){.cols-2{grid-template-columns:1fr}nav ul{display:none}.menu-btn{display:inline-flex;border:1px solid var(--line);padding:.45rem .6rem;border-radius:10px}.nav.open ul{display:flex;flex-direction:column;position:absolute;right:4%;top:56px;background:var(--surface);padding:10px;border:1px solid var(--line);border-radius:12px;width:min(280px,92vw)}}
+    a{color:var(--accent)}a:hover{text-decoration:underline}
+    :focus{outline:2px solid var(--focus);outline-offset:2px}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <div class="brand"><div class="brand-logo"></div><h1>Contact</h1></div>
+      <nav><button class="menu-btn">☰</button><ul>
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="about.html">À propos</a></li>
+      </ul></nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="breadcrumbs"><a href="../index.html">Accueil</a> · Contact</nav>
+    <div class="grid cols-2">
+      <form class="card" action="#" method="post">
+        <h2 class="mt-0">Nous écrire</h2>
+        <label class="label" for="name">Nom</label>
+        <input class="input" id="name" name="name" type="text" placeholder="Votre nom" required>
+        <div style="height:10px"></div>
+        <label class="label" for="email">Email</label>
+        <input class="input" id="email" name="email" type="email" placeholder="vous@exemple.com" required>
+        <div style="height:10px"></div>
+        <label class="label" for="msg">Message</label>
+        <textarea class="textarea" id="msg" name="message" placeholder="Votre message"></textarea>
+        <div style="height:16px"></div>
+        <button class="btn" type="submit">Envoyer</button>
+        <p class="text-muted" style="margin-top:8px">Formulaire statique (placeholder). Connectez-le via un service (Netlify Forms, Formspree, …) si besoin.</p>
+      </form>
+      <aside class="card">
+        <h3>Coordonnées</h3>
+        <p class="text-muted">Agence Tooyoo (placeholder)<br>Adresse — Lyon</p>
+        <p class="text-muted">Email : hello@tooyoo.agency</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer"><div class="container">© Tooyoo — A Taste of Lyon</div></footer>
+
+  <script>
+    const header=document.querySelector('.header');
+    const btn=document.querySelector('.menu-btn');
+    if(btn){btn.addEventListener('click',()=>{header.classList.toggle('open')})}
+    const isInternal=(url)=>url && !url.startsWith('http') && !url.startsWith('mailto:') && !url.startsWith('#');
+    document.querySelectorAll('a[href]').forEach(a=>a.addEventListener('click',e=>{const h=a.getAttribute('href');if(isInternal(h)){e.preventDefault();document.body.classList.add('page-leave');setTimeout(()=>location.href=h,250)}}));
+  </script>
+</body>
+</html>
